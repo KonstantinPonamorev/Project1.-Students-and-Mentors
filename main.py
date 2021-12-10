@@ -157,8 +157,38 @@ student_2.rate_lection(lector_2, 'Pascal', 5)
 student_2.rate_lection(lector_2, 'Pascal', 4)
 student_2.rate_lection(lector_2, 'Pascal', 5)
 
+reviewer_1.rate_hw(student_1, 'Python', 10)
+reviewer_1.rate_hw(student_1, 'Python', 10)
+reviewer_1.rate_hw(student_1, 'Python', 10)
 
-print('hi')
+reviewer_1.rate_hw(student_1, 'GIT', 10)
+reviewer_1.rate_hw(student_1, 'GIT', 10)
+reviewer_1.rate_hw(student_1, 'GIT', 10)
+
+reviewer_1.rate_hw(student_2, 'Python', 7)
+reviewer_1.rate_hw(student_2, 'Python', 6)
+reviewer_1.rate_hw(student_2, 'Python', 8)
+
+reviewer_1.rate_hw(student_2, 'GIT', 8)
+reviewer_1.rate_hw(student_2, 'GIT', 9)
+reviewer_1.rate_hw(student_2, 'GIT', 8)
+
+reviewer_2.rate_hw(student_1, 'GIT', 10)
+reviewer_2.rate_hw(student_1, 'GIT', 10)
+reviewer_2.rate_hw(student_1, 'GIT', 10)
+
+reviewer_2.rate_hw(student_1, 'Pascal', 10)
+reviewer_2.rate_hw(student_1, 'Pascal', 10)
+reviewer_2.rate_hw(student_1, 'Pascal', 10)
+
+reviewer_2.rate_hw(student_2, 'GIT', 9)
+reviewer_2.rate_hw(student_2, 'GIT', 7)
+reviewer_2.rate_hw(student_2, 'GIT', 6)
+
+reviewer_2.rate_hw(student_2, 'Pascal', 9)
+reviewer_2.rate_hw(student_2, 'Pascal', 8)
+reviewer_2.rate_hw(student_2, 'Pascal', 8)
+
 
 
 
