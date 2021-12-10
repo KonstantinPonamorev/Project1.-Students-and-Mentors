@@ -182,4 +182,18 @@ print(lector_2, '\n')
 print(student_1, '\n')
 print(student_2, '\n')
 
+def which_student_is_better(student_1, student_2):
+    if student_1 > student_2:
+        print(f'{student_1.name} {student_1.surname} учится лучше, чем {student_2.name} {student_2.surname}')
+    else:
+        print(f'{student_2.name} {student_2.surname} учится лучше, чем {student_1.name} {student_1.surname}')
 
+def which_lector_is_better(lector_1, lector_2):
+    if lector_1 > lector_2:
+        print(f'{lector_1.name} {lector_1.surname} преподает лучше, чем {lector_2.name} {lector_2.surname}')
+    else:
+        print(f'{lector_2.name} {lector_2.surname} преподает лучше, чем {lector_1.name} {lector_1.surname}')
+
+
+which_student_is_better(student_1, student_2)
+which_lector_is_better(lector_1, lector_2)
