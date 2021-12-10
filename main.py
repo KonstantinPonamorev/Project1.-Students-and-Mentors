@@ -22,16 +22,13 @@ class Student:
         for lection in self.courses_in_progress:
             sum_grades += sum(self.grades[lection])
             num_lections += len(self.grades[lection])
-        for lection in self.finished_courses:
-            sum_grades += sum(self.grades[lection])
-            num_lections += len(self.grades[lection])
         res = round(sum_grades / num_lections, 1)
         return res
 
     def __str__(self):
         res = f'Имя: {self.name}\n' \
               f'Фамилия: {self.surname}\n' \
-              f'Средняя оценка за лекции: {self.avg_grade()}\n' \
+              f'Средняя оценка за домашние задания: {self.avg_grade()}\n' \
               f'Курсы в процессе изучения: {", ".join(self.courses_in_progress)}\n' \
               f'Завершенные курсы: {", ".join(self.finished_courses)}'
         return res
@@ -169,60 +166,20 @@ reviewer_1.rate_hw(student_2, 'Python', 7)
 reviewer_1.rate_hw(student_2, 'Python', 6)
 reviewer_1.rate_hw(student_2, 'Python', 8)
 
-reviewer_1.rate_hw(student_2, 'GIT', 8)
-reviewer_1.rate_hw(student_2, 'GIT', 9)
-reviewer_1.rate_hw(student_2, 'GIT', 8)
-
 reviewer_2.rate_hw(student_1, 'GIT', 10)
 reviewer_2.rate_hw(student_1, 'GIT', 10)
 reviewer_2.rate_hw(student_1, 'GIT', 10)
-
-reviewer_2.rate_hw(student_1, 'Pascal', 10)
-reviewer_2.rate_hw(student_1, 'Pascal', 10)
-reviewer_2.rate_hw(student_1, 'Pascal', 10)
-
-reviewer_2.rate_hw(student_2, 'GIT', 9)
-reviewer_2.rate_hw(student_2, 'GIT', 7)
-reviewer_2.rate_hw(student_2, 'GIT', 6)
 
 reviewer_2.rate_hw(student_2, 'Pascal', 9)
 reviewer_2.rate_hw(student_2, 'Pascal', 8)
 reviewer_2.rate_hw(student_2, 'Pascal', 8)
 
 
+print(reviewer_1, '\n')
+print(reviewer_2, '\n')
+print(lector_1, '\n')
+print(lector_2, '\n')
+print(student_1, '\n')
+print(student_2, '\n')
 
 
-
-# cool_reviewer = Reviewer('Some', 'Buddy')
-# cool_reviewer.courses_attached += ['GIT']
-# cool_reviewer.courses_attached += ['Python']
-
-
-
-
-
-
-
-
-
-
-# cool_lector = Lecturer('Oleg', 'Bulygin')
-# cool_lector.courses_attached += ['Python']
-
-# best_student.rate_lection(cool_lector, 'Python', 10)
-# best_student.rate_lection(cool_lector, 'Python', 10)
-# best_student.rate_lection(cool_lector, 'Python', 10)
-
-# cool_reviewer.rate_hw(best_student, 'GIT', 10)
-# cool_reviewer.rate_hw(best_student, 'GIT', 9)
-# cool_reviewer.rate_hw(best_student, 'GIT', 8)
-# cool_reviewer.rate_hw(best_student, 'Python', 9)
-# cool_reviewer.rate_hw(best_student, 'Python', 9)
-# cool_reviewer.rate_hw(best_student, 'Python', 9)
-#
-# print(best_student)
-
-
-# print(cool_lector)
-# print(best_student.grades)
-# print(cool_lector.grades)
