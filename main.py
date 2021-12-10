@@ -94,6 +94,40 @@ class Reviewer(Mentor):
 
 
 
+def which_student_is_better(student_1, student_2):
+    if student_1 > student_2:
+        print(f'{student_1.name} {student_1.surname} учится лучше, чем {student_2.name} {student_2.surname}')
+    else:
+        print(f'{student_2.name} {student_2.surname} учится лучше, чем {student_1.name} {student_1.surname}')
+
+def which_lector_is_better(lector_1, lector_2):
+    if lector_1 > lector_2:
+        print(f'{lector_1.name} {lector_1.surname} преподает лучше, чем {lector_2.name} {lector_2.surname}')
+    else:
+        print(f'{lector_2.name} {lector_2.surname} преподает лучше, чем {lector_1.name} {lector_1.surname}')
+
+def avg_grade_on_course_students(students, course):
+    sum_grades = 0
+    num_lections = 0
+    for student in students:
+        if isinstance(student, Student) and course in student.courses_in_progress:
+            sum_grades += sum(student.grades[course])
+            num_lections += len(student.grades[course])
+    res = round(sum_grades / num_lections, 1)
+    return res
+
+def avg_grade_on_course_lectors(lectors, course):
+    sum_grades = 0
+    num_lections = 0
+    for lector in lectors:
+        if isinstance(lector, Lecturer) and course in lector.courses_attached:
+            sum_grades += sum(lector.grades[course])
+            num_lections += len(lector.grades[course])
+    res = round(sum_grades / num_lections, 1)
+    return res
+
+
+
 student_1 = Student('Konstantin', 'Ponamorev', 'male')
 student_1.courses_in_progress += ['Python']
 student_1.courses_in_progress += ['GIT']
@@ -119,7 +153,6 @@ reviewer_1.courses_attached += ['GIT']
 reviewer_2 = Reviewer('Vladimir', 'Vladimirov')
 reviewer_2.courses_attached += ['Pascal']
 reviewer_2.courses_attached += ['GIT']
-
 
 
 student_1.rate_lection(lector_1, 'Python', 10)
@@ -182,18 +215,8 @@ print(lector_2, '\n')
 print(student_1, '\n')
 print(student_2, '\n')
 
-def which_student_is_better(student_1, student_2):
-    if student_1 > student_2:
-        print(f'{student_1.name} {student_1.surname} учится лучше, чем {student_2.name} {student_2.surname}')
-    else:
-        print(f'{student_2.name} {student_2.surname} учится лучше, чем {student_1.name} {student_1.surname}')
-
-def which_lector_is_better(lector_1, lector_2):
-    if lector_1 > lector_2:
-        print(f'{lector_1.name} {lector_1.surname} преподает лучше, чем {lector_2.name} {lector_2.surname}')
-    else:
-        print(f'{lector_2.name} {lector_2.surname} преподает лучше, чем {lector_1.name} {lector_1.surname}')
-
-
 which_student_is_better(student_1, student_2)
 which_lector_is_better(lector_1, lector_2)
+
+print(avg_grade_on_course_students([student_1, student_2], 'Python'))
+print(avg_grade_on_course_lectors([lector_1, lector_2], 'GIT'))
